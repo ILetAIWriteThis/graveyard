@@ -1,0 +1,4 @@
+title = "Graveyard credential gate"
+
+[extend]
+useDefault = true

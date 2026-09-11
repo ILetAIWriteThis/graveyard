@@ -1,0 +1,21 @@
+{
+  "domains": {
+    "collecting": { "title": "The collector's corner", "description": "Keeping things without keeping the guilt.", "symbol": "flower" },
+    "making": { "title": "Unfinished business", "description": "Experiments, abandoned plans, and useful ways to start again.", "symbol": "spark" },
+    "computing": { "title": "The machine room", "description": "Small tools and technical ideas with a little life left.", "symbol": "code" }
+  },
+  "topics": {
+    "curation": { "title": "Curation", "description": "Turn saved material into something findable." },
+    "creative-process": { "title": "Creative process", "description": "How ideas begin, stall, and return." },
+    "knowledge": { "title": "Connected knowledge", "description": "Preserve context and follow relationships." },
+    "small-tools": { "title": "Small tools", "description": "Focused utilities that earn their place." },
+    "preservation": { "title": "Preservation", "description": "Keep the useful part understandable and portable." },
+    "security": { "title": "Security", "description": "Keep public collections safe to share." }
+  },
+  "bridges": [
+    { "from": "curation", "to": "knowledge", "reason": "Context and relationships make saved things discoverable." },
+    { "from": "creative-process", "to": "preservation", "reason": "An unfinished experiment can become the raw material for another." },
+    { "from": "small-tools", "to": "curation", "reason": "Small automations remove the administrative cost of collecting." },
+    { "from": "preservation", "to": "security", "reason": "Deciding what to keep also means deciding what must never be published." }
+  ]
+}

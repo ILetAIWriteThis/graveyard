@@ -1,0 +1,10 @@
+{
+  "id": "permission-to-keep", "title": "Permission to keep", "domain": "collecting", "type": "thought", "status": "seed", "added": "2026-09-11",
+  "summary": "Let the collector's instinct live, without turning every saved thing into an obligation.",
+  "epitaph": "It doesn't have to become something.",
+  "revive_when": "Saving something starts to feel like promising to finish it.",
+  "topics": ["curation", "creative-process"],
+  "related": [{ "id": "project-eulogy", "reason": "A short eulogy keeps the useful part of unfinished work without creating a new commitment." }],
+  "sources": [], "files": [], "provenance": "user",
+  "origin": "The owner's founding brief for graveyard; summarized by the caretaker.", "publish": true
+}

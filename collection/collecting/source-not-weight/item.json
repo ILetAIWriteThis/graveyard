@@ -1,0 +1,10 @@
+{
+  "id": "source-not-weight", "title": "Keep the source, lose the weight", "domain": "collecting", "type": "solution", "status": "resting", "added": "2026-09-11",
+  "summary": "Preserve recipes, context, and public links instead of binaries and oversized artifacts.",
+  "epitaph": "Packed light for the afterlife.",
+  "revive_when": "You want to save a PDF, database export, executable, or entire dependency folder.",
+  "topics": ["preservation", "curation", "security"],
+  "related": [{ "id": "pocket-inventory", "reason": "A text inventory can preserve a directory's shape without committing its heavy contents." }],
+  "sources": [], "files": [], "provenance": "caretaker",
+  "origin": "Starter guidance derived from the owner's source-only storage constraint.", "publish": true
+}

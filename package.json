@@ -1,0 +1,28 @@
+{
+  "name": "graveyard",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A resting place for unfinished things, and the ideas between them.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "setup": "node scripts/setup.mjs",
+    "tools": "node scripts/gitleaks.mjs --install",
+    "check": "node scripts/validate.mjs && node scripts/guard.mjs --worktree",
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/serve.mjs --watch",
+    "preview": "node scripts/serve.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "test:browser": "playwright test",
+    "audit": "node scripts/guard.mjs --worktree && node scripts/guard.mjs --history && node scripts/gitleaks.mjs --audit"
+  },
+  "dependencies": {
+    "markdown-it": "15.0.2"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.63.0"
+  }
+}

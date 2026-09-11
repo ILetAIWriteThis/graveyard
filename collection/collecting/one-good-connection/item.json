@@ -1,0 +1,10 @@
+{
+  "id": "one-good-connection", "title": "One good connection", "domain": "collecting", "type": "fragment", "status": "seed", "added": "2026-09-11",
+  "summary": "A tiny sentence pattern for connecting two saved things through a real shared problem.",
+  "epitaph": "Never buried alone.",
+  "revive_when": "Your bookmarks are growing but nothing you save seems to meet anything else.",
+  "topics": ["knowledge", "curation", "small-tools"],
+  "related": [{ "id": "pocket-inventory", "reason": "A concrete tool becomes easier to find when it is linked to the preservation problem it solves." }],
+  "sources": [], "files": [], "provenance": "caretaker",
+  "origin": "Original starter pattern for the repository's relationship system.", "publish": true
+}
