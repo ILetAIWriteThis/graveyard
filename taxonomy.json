@@ -7,6 +7,7 @@
   "topics": {
     "curation": { "title": "Curation", "description": "Turn saved material into something findable." },
     "creative-process": { "title": "Creative process", "description": "How ideas begin, stall, and return." },
+    "problem-framing": { "title": "Problem framing", "description": "Separate the problem, the proposed approach, and evidence of improvement." },
     "knowledge": { "title": "Connected knowledge", "description": "Preserve context and follow relationships." },
     "small-tools": { "title": "Small tools", "description": "Focused utilities that earn their place." },
     "preservation": { "title": "Preservation", "description": "Keep the useful part understandable and portable." },
@@ -15,6 +16,8 @@
   "bridges": [
     { "from": "curation", "to": "knowledge", "reason": "Context and relationships make saved things discoverable." },
     { "from": "creative-process", "to": "preservation", "reason": "An unfinished experiment can become the raw material for another." },
+    { "from": "problem-framing", "to": "creative-process", "reason": "A clear purpose gives an experiment direction while leaving room to change its plan." },
+    { "from": "problem-framing", "to": "knowledge", "reason": "Naming the problem a fragment could solve makes its connection to other work useful." },
     { "from": "small-tools", "to": "curation", "reason": "Small automations remove the administrative cost of collecting." },
     { "from": "preservation", "to": "security", "reason": "Deciding what to keep also means deciding what must never be published." }
   ]
