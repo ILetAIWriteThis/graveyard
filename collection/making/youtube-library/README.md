@@ -2,36 +2,59 @@
 
 ## WHAT
 
-An empty project shell named `youtube-library`. At intake it contained no regular files, source code, database, archive, symlink, documentation, Git metadata, or generated output. Its only contents were two empty directories: one for data and one whose name resembled a Google OAuth client-credential filename. The credential-like name is deliberately not reproduced here.
+A YouTube attention tracker that grew large enough to disprove its own premise. The user reports that it held about 1.3 million video records at one point. The supplied ZIP is an older backup, not that peak snapshot, but it still contains 1,194 channels and 214,888 videos.
 
-The narrowest defensible interpretation is an intention to make some kind of YouTube library with separate places for authentication material and application data. No supplied material explains what “library” meant, who it was for, how it would work, or why it stopped. There is no implementation evidence and no evidence of real use.
+The backup’s schema shows channels with categories, priorities, creation dates, and refresh timestamps. Videos have upload dates, durations, short-form flags, four states, progress, and a progress queue. This supports a picture of a substantial catalog with prioritization and viewing-state tracking. No application code, documentation, Git history, or license was supplied, so its interface, ingestion process, and implementation are unknown.
 
-This record comes from static inspection of the supplied directory. The collected app was not executed; there was nothing executable to preserve.
+Anonymous totals from the older backup:
+
+| Measure | Archive evidence |
+| --- | ---: |
+| Channels | 1,194 |
+| Videos | 214,888 |
+| Unwatched | 166,567 |
+| In progress | 52 |
+| Watched | 32,824 |
+| Hidden | 15,445 |
+| Remaining unwatched/in-progress duration | about 52,208 hours |
+| Remaining duration at one hour per day | about 143 years |
+
+The unwatched and in-progress records make up about 77.5% of this snapshot. Their known remaining duration is almost six years of continuous playback, or roughly a century even at about one hour and 26 minutes every day. The unavailable 1.3-million-record peak is user-supplied context; no duration estimate is invented for it.
 
 ## WHY
 
-Caretaker interpretation: a personal video library could solve a more durable problem than “save this for later” by recording why a video matters, which topic or problem it informs, and what was learned from it. That framing was not recovered from project source; it is a possible direction suggested by the name alone.
+The biggest result was not a better queue. It was an eye-opening measure of how impossible the queue had become. The user stopped using the project after seeing how many lifetimes of unwatched material it represented and asking: what is the point?
 
-No reusable code survived. The reusable lesson is a boundary: OAuth credentials and private account data should remain outside preserved source, while durable, non-sensitive annotations can be represented as reviewed text. A future version should begin by naming the smallest useful record—perhaps a public video URL, a reason for saving it, topics, and notes—before choosing an API, database, or synchronization mechanism.
+That makes the project useful precisely because it ended. A system intended to organize abundance instead exposed attention debt: collecting a video creates an implied future commitment, while better ingestion can make an impossible commitment grow faster and look tidier.
+
+The reusable mechanism is to translate a backlog into human time before optimizing it. Show years at a realistic daily viewing budget, distinguish selected material from an automatically accumulated feed, and make hiding, expiry, sampling, or deletion first-class actions. A future tool should help decide what not to watch rather than aspire to complete coverage.
 
 ## What was tried
 
-Only directory setup is evident. Empty data and credential-named directories may indicate preparation for local state and OAuth, but they do not demonstrate that authentication, ingestion, storage, or a user interface was implemented. Their original purpose is unknown.
+The populated backup is evidence that a large dataset was assembled and maintained. It records channel categorization and priority, refresh metadata, video duration and format, and a state machine of `unwatched`, `in_progress`, `watched`, and `hidden`. The 52 in-progress records also have progress-queue values, although only one record has non-zero numeric progress, so the precise progress workflow cannot be reconstructed from data alone.
+
+There is evidence of real scale and state assignment, but not of how those values were produced. Watched status may have been imported, changed through the application, or both. No source was available to verify API behavior, scheduling, deduplication, or user-interface claims.
 
 ## Limitations
 
-There was no Git history to compare and no working-tree snapshot beyond the two empty directories. Consequently, the original requirements, language, architecture, license, completion level, and cause of abandonment are all unknown. This burial preserves no source files because the supplied location had none.
+The archive contains app data, not source. Its two JSON files are approximately 307 KiB and 83 MiB, with channel identities, video titles, categories, and viewing state. They are private, exceed the collection’s per-file limit, and are deliberately not preserved or published.
 
-If credentials previously existed elsewhere for this project, they were not available for inspection here. They should be revoked or rotated before reuse if their exposure cannot be ruled out.
+This older snapshot is internally imperfect: 25,589 videos have zero or negative recorded duration, overwhelmingly among watched records, and 25,486 video records refer to channel IDs absent from the channel export. Only 68 unwatched records lack a positive duration, so the archive’s unwatched-time total is nearly complete, but it remains a snapshot calculation rather than a promise of exact lifetime cost.
+
+The project directory was not a Git repository. No implementation, requirements, license, or evidence explaining the difference between this backup and the reported 1.3-million-record peak was available. Individual channel and video records were inspected only through structure and anonymous aggregates. The collected material was never executed.
+
+If credentials previously existed elsewhere for this project, they were not included in the archive. They should be revoked or rotated before reuse if their exposure cannot be ruled out.
 
 ## Revival condition
 
-Dig it up when a real collection of videos needs context that YouTube’s own lists do not retain, and when the first useful workflow can be tested without copying watch history, tokens, or other private account data into the repository.
+Dig it up only for a bounded, deletion-first experiment: define an attention budget, show the cost before adding an item, and retain a video because it serves a current purpose—not because an API can find it.
 
 ## Nearby graves
 
-[Problem Space](../problem-space/README.md) offers a possible home for the reason a video was saved: a selected video could support a problem node as evidence or context, rather than becoming one more item in a flat backlog. This connection is the caretaker’s proposal, not recovered project intent.
+[Problem Space](../problem-space/README.md) suggests a stricter filter than a standalone library. A video could be retained only when it supports an active problem as evidence or context; the problem supplies a reason to keep it and a reason to discard everything else. This connection is the caretaker’s proposal.
 
 ## Provenance
 
-The user supplied the local project directory for burial on 2026-09-13 and specifically asked that secrets, databases, and real app data be ignored. Static inventory found no such files and no source code—only the empty directories described above. No contents were copied from the source. The title comes from the directory name; all proposed uses are caretaker interpretation.
+The user supplied the local project directory for burial on 2026-09-13, then added an older backup dated 2026-05-27. The user reports that the live collection reached about 1.3 million records and that confronting the unwatched lifetime was why they stopped using it. Those statements are preserved as user context and distinguished from the older backup’s measured totals.
+
+The caretaker listed and integrity-checked the ZIP before extracting its two regular JSON files into a temporary directory. There were no traversal paths or symlinks. Static inspection validated the schemas and computed only anonymous aggregates; no titles, channel identities, categories, URLs, credentials, or individual viewing records were copied into this repository. The archive and extracted app data are omitted by design, and no collected code was available or executed.

@@ -5,10 +5,12 @@
   "topics": {
     "creative-process": { "title": "Creative process", "description": "How ideas begin, stall, and return." },
     "problem-framing": { "title": "Problem framing", "description": "Separate the problem, the proposed approach, and evidence of improvement." },
-    "knowledge": { "title": "Connected knowledge", "description": "Preserve context and follow relationships." }
+    "knowledge": { "title": "Connected knowledge", "description": "Preserve context and follow relationships." },
+    "attention": { "title": "Finite attention", "description": "Make the time cost of accumulated commitments visible enough to choose what not to keep." }
   },
   "bridges": [
     { "from": "problem-framing", "to": "creative-process", "reason": "A clear purpose gives an experiment direction while leaving room to change its plan." },
-    { "from": "problem-framing", "to": "knowledge", "reason": "Naming the problem a fragment could solve makes its connection to other work useful." }
+    { "from": "problem-framing", "to": "knowledge", "reason": "Naming the problem a fragment could solve makes its connection to other work useful." },
+    { "from": "knowledge", "to": "attention", "reason": "A collection becomes useful when preserved context helps spend finite attention, not merely accumulate more material." }
   ]
 }

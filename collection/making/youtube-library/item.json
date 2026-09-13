@@ -2,24 +2,25 @@
   "id": "youtube-library",
   "title": "YouTube Library",
   "domain": "making",
-  "type": "fragment",
+  "type": "project",
   "status": "resting",
   "added": "2026-09-13",
-  "summary": "A record of an empty YouTube-library project shell that retains the possible cataloging idea and its boundary between source, credentials, and app data.",
-  "epitaph": "The library left no books, only labels on two empty rooms.",
-  "revive_when": "Saved videos need durable reasons, topics, and notes that a platform queue does not provide, and those needs are concrete enough to define without importing private account data.",
+  "summary": "A YouTube attention tracker whose older 214,888-video backup exposed about 52,208 hours of remaining viewing—roughly 143 years at one hour per day.",
+  "epitaph": "It counted the queue until the queue stopped pretending to be a plan.",
+  "revive_when": "A deliberately bounded, deletion-first tool needs to expose the lifetime cost of saved media before it admits more.",
   "topics": [
-    "knowledge"
+    "knowledge",
+    "attention"
   ],
   "related": [
     {
       "id": "problem-space",
-      "reason": "A revived video catalog could attach selected videos and the reasons they matter to Problem Space nodes, giving saved media problem context instead of creating another undifferentiated queue."
+      "reason": "Problem Space could reverse the tracker’s accumulation model: retain a video only when it supports an active problem, using context as a filter rather than creating another comprehensive queue."
     }
   ],
   "sources": [],
   "files": [],
   "provenance": "user",
-  "origin": "User supplied the local old-repos-to-grave/youtube-library directory for burial on 2026-09-13 and asked that secrets, databases, and real app data be excluded. The directory was not a Git repository and contained no files: only empty data and credential-named directories. The caretaker inspected directory metadata without reading or preserving any credentials or app data, preserved no source because none was present, and inferred the cataloging concept only from the project name and directory roles. The material was not executed.",
+  "origin": "User supplied the local old-repos-to-grave/youtube-library directory for burial on 2026-09-13, then added an older ZIP backup and asked that secrets, databases, and individual app data be excluded. The user reports that the tracker later held about 1.3 million videos and was abandoned after the scale of unwatched content made the premise feel pointless. The backup contains 1,194 channel records and 214,888 video records in two large JSON files. The caretaker inspected it statically in a temporary directory, retained only anonymous aggregates and schema-level observations, and preserved neither the archive nor its private records. No collected code was available or executed.",
   "publish": true
 }
