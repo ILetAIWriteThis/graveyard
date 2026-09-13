@@ -1,16 +1,24 @@
 {
   "domains": {
-    "making": { "title": "Unfinished business", "description": "Experiments, abandoned plans, and useful ways to start again.", "symbol": "spark" }
+    "making": { "title": "Unfinished business", "description": "Experiments, abandoned plans, and useful ways to start again.", "symbol": "spark" },
+    "learning": { "title": "Learning by building", "description": "Labs and tools that make unfamiliar systems observable enough to practice, question, and understand.", "symbol": "compass" }
   },
   "topics": {
     "creative-process": { "title": "Creative process", "description": "How ideas begin, stall, and return." },
     "problem-framing": { "title": "Problem framing", "description": "Separate the problem, the proposed approach, and evidence of improvement." },
     "knowledge": { "title": "Connected knowledge", "description": "Preserve context and follow relationships." },
-    "attention": { "title": "Finite attention", "description": "Make the time cost of accumulated commitments visible enough to choose what not to keep." }
+    "attention": { "title": "Finite attention", "description": "Make the time cost of accumulated commitments visible enough to choose what not to keep." },
+    "security-learning": { "title": "Security learning", "description": "Practice detection and response through bounded, inspectable exercises." },
+    "synthetic-data": { "title": "Synthetic evidence", "description": "Generated stand-ins that make patterns testable without publishing real records." },
+    "local-ai": { "title": "Local AI", "description": "Models and agent loops that run close to the material they inspect." },
+    "evaluation": { "title": "Evaluation", "description": "Expose unsupported claims, missed evidence, and the gap between a confident output and a useful result." }
   },
   "bridges": [
     { "from": "problem-framing", "to": "creative-process", "reason": "A clear purpose gives an experiment direction while leaving room to change its plan." },
     { "from": "problem-framing", "to": "knowledge", "reason": "Naming the problem a fragment could solve makes its connection to other work useful." },
-    { "from": "knowledge", "to": "attention", "reason": "A collection becomes useful when preserved context helps spend finite attention, not merely accumulate more material." }
+    { "from": "knowledge", "to": "attention", "reason": "A collection becomes useful when preserved context helps spend finite attention, not merely accumulate more material." },
+    { "from": "synthetic-data", "to": "security-learning", "reason": "Reserved, generated evidence makes dangerous or private security patterns available for bounded practice." },
+    { "from": "local-ai", "to": "evaluation", "reason": "A local model becomes a learning instrument when its claims, stopping behavior, and evidence can be inspected." },
+    { "from": "evaluation", "to": "knowledge", "reason": "Recording why a conclusion is supported turns model output into knowledge that can be challenged and reused." }
   ]
 }

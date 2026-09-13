@@ -1,0 +1,23 @@
+# Python / uv
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# secrets / env
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# local data / scratch
+*.log
+*.jsonl
+!synthetic-logs/*.jsonl.example
+benchmark_results.csv
+
+# OS / editor
+.DS_Store
