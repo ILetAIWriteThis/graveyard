@@ -24,7 +24,7 @@ The reusable piece is this small prompt. It could expose a solution chosen befor
 
 ## Nearby graves
 
-[Compost the plan](../compost-the-plan/README.md) helps an aim survive the loss of its original approach. [The five-minute eulogy](../project-eulogy/README.md) records the same distinction after an attempt: original problem, what was tried, and what exists.
+[Problem Space](../problem-space/README.md) is the unfinished project that gives this prompt a concrete destination: each graph node needs a problem statement, a current model, and evidence of how well it is understood.
 
 ## Provenance
 

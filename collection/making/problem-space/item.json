@@ -1,0 +1,48 @@
+{
+  "id": "problem-space",
+  "title": "Problem Space",
+  "domain": "making",
+  "type": "project",
+  "status": "resting",
+  "added": "2026-09-13",
+  "summary": "An unfinished, repo-backed PWA for mapping problems as recursive nodes with explained cross-domain relationships and a device-local thought inbox.",
+  "epitaph": "The atlas was ready. The first problem never arrived.",
+  "revive_when": "You have real problems worth mapping and need recursive decomposition, explicit relationships, and evidence levels instead of another flat note list.",
+  "topics": [
+    "problem-framing",
+    "knowledge",
+    "creative-process"
+  ],
+  "related": [
+    {
+      "id": "purpose-plan-result",
+      "reason": "Purpose → Plan → Result could provide a compact framing prompt inside each problem node, while the atlas preserves decomposition and cross-problem links."
+    }
+  ],
+  "sources": [],
+  "files": [
+    "source/README.md",
+    "source/original-readme.md",
+    "source/project-brief.md",
+    "source/LICENSE",
+    "source/gitignore.txt",
+    "source/github-workflows/deploy-pages.yml",
+    "source/index.html",
+    "source/package.json",
+    "source/package-lock.json",
+    "source/public/data/problems.json",
+    "source/public/data/problems.sha256",
+    "source/public/favicon.svg",
+    "source/public/manifest.webmanifest",
+    "source/public/sw.js",
+    "source/script.js",
+    "source/scripts/manage-problems.mjs",
+    "source/scripts/problem-data.mjs",
+    "source/styles.css",
+    "source/tests/data.test.mjs",
+    "source/vite.config.js"
+  ],
+  "provenance": "user",
+  "origin": "Selected by the caretaker on 2026-09-13 from the user's local old-repos-to-grave/problem-space working tree. The Git history contained only the initial README and MIT license; the application snapshot was modified or untracked. The caretaker preserved the non-generated text source, renamed context and dotfiles where needed to avoid collisions or authority confusion, excluded repository history, dependencies, and generated output, and did not execute the collected code.",
+  "publish": true
+}

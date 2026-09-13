@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="A repo-backed graph of problems, plus a private local inbox for thoughts caught in motion." />
+    <meta name="theme-color" content="#eeeadd" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta property="og:title" content="Problem Space — enter through a problem" />
+    <meta property="og:description" content="A map for questions that refuse to stay in one domain." />
+    <title>Problem Space — enter through a problem</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,300;1,6..72,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#atlas">Skip to the atlas</a>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Problem Space home">
+        <span class="brand-glyph" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span>Problem Space</span>
+      </a>
+      <nav aria-label="Primary navigation"><a href="#atlas">Atlas</a><a href="#principles">Principles</a></nav>
+      <div class="top-actions">
+        <button class="search-trigger" type="button" aria-haspopup="dialog"><span>Find a problem</span><kbd>/</kbd></button>
+        <button class="inbox-trigger" type="button" aria-haspopup="dialog">
+          <span>Loose thoughts</span><b class="inbox-count" aria-label="0 saved thoughts">0</b>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-meta reveal"><span>A repo-backed thinking atlas</span><span>Any domain / no dead ends</span></div>
+        <h1 id="hero-title" class="reveal">Everything<br />starts with<br /><em>a problem.</em></h1>
+        <div class="hero-bottom reveal">
+          <p>Problem Space is a living map of problems, their decomposition, the mental models connecting them, and the experience that turns theoretical understanding into judgment.</p>
+          <a class="enter-link" href="#atlas"><span>Enter anywhere</span><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M7 24h32M28 13l11 11-11 11" /></svg></a>
+        </div>
+        <div class="hero-orbit" aria-hidden="true"><span class="orbit orbit-a"><i>problem</i></span><span class="orbit orbit-b"><i>why?</i></span><span class="orbit orbit-c"><i>then?</i></span></div>
+      </section>
+
+      <section class="atlas" id="atlas" aria-labelledby="atlas-title">
+        <div class="atlas-heading reveal">
+          <div><span class="section-index">01 / The atlas</span><h2 id="atlas-title">Follow the question.</h2></div>
+          <p>Move down into subproblems, sideways into related questions, or backward through the path that brought you here.</p>
+        </div>
+
+        <div class="atlas-shell reveal">
+          <aside class="root-rail" aria-label="Root problems">
+            <div class="rail-heading"><span>Root problems</span><span id="root-count">00</span></div>
+            <div class="root-list" id="root-list"></div>
+            <div class="rail-note"><span class="live-dot"></span><p>The map has no final page.</p></div>
+          </aside>
+
+          <div class="graph-pane">
+            <div class="graph-toolbar">
+              <div class="breadcrumbs" id="breadcrumbs" aria-label="Problem ancestry"></div>
+              <div class="graph-legend" aria-label="Relationship legend"><span><i class="line-solid"></i> contains</span><span><i class="line-dashed"></i> relates</span></div>
+            </div>
+            <div class="graph-canvas" id="graph-canvas" aria-label="Problem relationship map">
+              <svg id="graph-lines" aria-hidden="true"></svg>
+              <div id="graph-nodes"></div>
+              <p class="graph-hint">Select any node to recenter the map</p>
+            </div>
+            <div class="trail-bar"><span>Your trail</span><div class="trail" id="trail"></div><button class="trail-clear" type="button">Clear</button></div>
+          </div>
+
+          <article class="reader" id="reader" aria-live="polite">
+            <div class="reader-meta"><span id="reader-domain">Domain</span><span id="reader-level">Aware 01/04</span></div>
+            <p class="reader-kind" id="reader-kind">Root problem</p>
+            <h3 id="reader-title">Loading the problem…</h3>
+            <p class="reader-summary" id="reader-summary"></p>
+            <div class="reader-section"><span>The model</span><p id="reader-model"></p></div>
+            <div class="reader-section reader-section--children" id="children-section"><span>Break it down</span><div id="reader-children"></div></div>
+            <div class="reader-section"><span>Open uncertainty</span><p id="reader-uncertainty"></p></div>
+            <div class="concept-row" id="concept-row"></div>
+            <div class="reader-footer"><span id="reader-updated">Observed —</span><button class="copy-link" type="button">Copy link</button></div>
+          </article>
+        </div>
+
+        <div class="related-strip reveal">
+          <div class="related-heading"><span>Continue elsewhere</span><p>Related because the structure rhymes.</p></div>
+          <div class="related-list" id="related-list"></div>
+        </div>
+      </section>
+
+      <section class="principles" id="principles" aria-labelledby="principles-title">
+        <div class="principles-heading reveal"><span class="section-index">02 / The rules</span><h2 id="principles-title">A graph with a point of view.</h2></div>
+        <div class="principle-grid reveal">
+          <article><span>01</span><h3>The problem is the root.</h3><p>Domains help you enter. Technologies help you explain. Neither gets to become the center.</p></article>
+          <article><span>02</span><h3>Depth is recursive.</h3><p>Every subproblem is a complete problem. It can open again, as many times as understanding demands.</p></article>
+          <article><span>03</span><h3>Every edge is a door.</h3><p>Parent, child, backlink, relation, root, trail. There is no leaf where curiosity has to stop.</p></article>
+        </div>
+      </section>
+
+      <section class="closing" aria-label="Closing statement">
+        <p class="reveal">The goal is not to know more.</p>
+        <blockquote class="reveal">It is to see<br /><em>what connects.</em></blockquote>
+        <a class="enter-link enter-link--dark reveal" href="#atlas"><span>Return to the map</span><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 40V8M13 19 24 8l11 11" /></svg></a>
+      </section>
+    </main>
+
+    <footer>
+      <div class="brand"><span class="brand-glyph" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>Problem Space</span></div>
+      <p>Store what changes how you think—not everything you know.</p><span>Learning over knowing</span>
+    </footer>
+
+    <button class="mobile-capture" type="button" aria-label="Capture a loose thought"><span>+</span><b class="inbox-count">0</b></button>
+
+    <dialog class="search-dialog" aria-labelledby="search-title">
+      <form method="dialog" class="search-box">
+        <div class="dialog-topline"><span id="search-title">Find a problem</span><button value="cancel" aria-label="Close search">Esc</button></div>
+        <label><span class="sr-only">Search problems and concepts</span><input id="search-input" type="search" placeholder="Question, domain, concept…" autocomplete="off" /></label>
+        <div class="search-results" id="search-results"></div>
+        <p class="search-help"><kbd>↑</kbd><kbd>↓</kbd> to move · <kbd>Enter</kbd> to open</p>
+      </form>
+    </dialog>
+
+    <dialog class="inbox-dialog" aria-labelledby="inbox-title">
+      <div class="inbox-panel">
+        <div class="dialog-topline">
+          <div><span class="eyebrow">Local / private / offline</span><h2 id="inbox-title">Loose thoughts</h2></div>
+          <button class="inbox-close" type="button" aria-label="Close inbox">Close</button>
+        </div>
+        <p class="inbox-intro">Catch the thought before it disappears. It stays in this browser until you promote or delete it.</p>
+        <form class="capture-form">
+          <label for="thought-input">What should not be lost?</label>
+          <textarea id="thought-input" rows="4" maxlength="2000" placeholder="A question, contradiction, connection, or thing that felt wrong…" required></textarea>
+          <div class="capture-context">
+            <label><input id="attach-context" type="checkbox" checked /><span>Attach current problem</span></label>
+            <span id="capture-problem">No problem selected</span>
+          </div>
+          <button class="save-thought" type="submit"><span>Keep locally</span><span>↘</span></button>
+        </form>
+        <div class="inbox-divider"><span>Waiting room</span><span id="inbox-status">0 thoughts</span></div>
+        <div class="thought-list" id="thought-list"></div>
+        <div class="inbox-empty" id="inbox-empty"><span>∅</span><p>Nothing waiting. Good ideas are allowed to arrive unfinished.</p></div>
+        <div class="inbox-actions">
+          <button class="export-thoughts" type="button">Export all (.md)</button>
+          <p>IndexedDB is device-local. Clearing browser data may remove these thoughts.</p>
+        </div>
+      </div>
+    </dialog>
+    <div class="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

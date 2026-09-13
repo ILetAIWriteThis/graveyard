@@ -1,0 +1,13 @@
+{
+  "name": "Problem Space",
+  "short_name": "Problems",
+  "description": "A connected problem atlas with a private, local thought inbox.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#eeeadd",
+  "theme_color": "#eeeadd",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

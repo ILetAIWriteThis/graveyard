@@ -1,0 +1,18 @@
+{
+  "name": "problem-space-pwa",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "problems": "node scripts/manage-problems.mjs",
+    "validate:data": "node scripts/manage-problems.mjs check",
+    "test": "node --test",
+    "check": "npm run validate:data && npm test && npm run build"
+  },
+  "devDependencies": {
+    "vite": "latest"
+  }
+}

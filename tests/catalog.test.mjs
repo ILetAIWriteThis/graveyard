@@ -24,9 +24,9 @@ test('build supports a project base path, real source pages, and backlinks', t =
   const html = fs.readFileSync(path.join(out, 'index.html'), 'utf8');
   assert.match(html, /href="\/graveyard\/assets\/style.css"/);
   assert.match(html, /data-theme="dark"/);
-  assert.ok(connections(catalog.byId.get('pocket-inventory'), catalog).some(edge => edge.kind === 'Backlink'));
-  assert.ok(fs.existsSync(path.join(out, 'items/pocket-inventory/source/inventory.mjs.html')));
-  assert.ok(!fs.existsSync(path.join(out, 'items/pocket-inventory/inventory.mjs')));
+  assert.ok(connections(catalog.byId.get('purpose-plan-result'), catalog).some(edge => edge.kind === 'Backlink'));
+  assert.ok(fs.existsSync(path.join(out, 'items/problem-space/source/source/scripts/problem-data.mjs.html')));
+  assert.ok(!fs.existsSync(path.join(out, 'items/problem-space/source/scripts/problem-data.mjs')));
   assert.ok(!fs.existsSync(path.join(out, 'collection')));
   assert.ok(!fs.existsSync(path.join(out, 'inbox')));
   assert.ok(!fs.existsSync(path.join(out, '.git')));
@@ -34,21 +34,21 @@ test('build supports a project base path, real source pages, and backlinks', t =
 
 test('unpublished content is absent from pages, search, and relationship data', t => {
   const root = fixture(t);
-  edit(root, 'one-good-connection', { publish: false, summary: 'UNPUBLISHED_SENTINEL' });
+  edit(root, 'purpose-plan-result', { publish: false, summary: 'UNPUBLISHED_SENTINEL' });
   // A public prose link to an unpublished item must be removed before a build.
   // This particular item is referenced only by metadata relationships.
   const { out } = build(root);
   const js = fs.readFileSync(path.join(out, 'assets/catalog.js'), 'utf8');
   assert.ok(!js.includes('UNPUBLISHED_SENTINEL'));
-  assert.ok(!js.includes('"id":"one-good-connection"'));
-  assert.ok(!fs.existsSync(path.join(out, 'items/one-good-connection')));
-  const html = fs.readFileSync(path.join(out, 'items/compost-the-plan/index.html'), 'utf8');
-  assert.ok(!html.includes('/items/one-good-connection/'));
+  assert.ok(!js.includes('"id":"purpose-plan-result"'));
+  assert.ok(!fs.existsSync(path.join(out, 'items/purpose-plan-result')));
+  const html = fs.readFileSync(path.join(out, 'items/problem-space/index.html'), 'utf8');
+  assert.ok(!html.includes('/items/purpose-plan-result/'));
 });
 
 test('raw HTML, metadata, and source render as text; no remote images load', t => {
   const root = fixture(t);
-  const item = loadCatalog(root).byId.get('one-good-connection');
+  const item = loadCatalog(root).byId.get('problem-space');
   edit(root, item.id, { title: '</h1><script>window.bad=1</script>', files: ['example.html'] });
   fs.appendFileSync(path.join(item.directory, 'README.md'), '\n<script>window.bad=2</script>\n\n![Example](https://example.com/picture.png)\n\n[bad](javascript:alert(1))\n');
   fs.writeFileSync(path.join(item.directory, 'example.html'), '<script>window.bad=3</script>');
@@ -66,17 +66,17 @@ test('raw HTML, metadata, and source render as text; no remote images load', t =
 test('rejects traversal, missing topics, impossible dates, and broken relationships', t => {
   for (const update of [{ files: ['../elsewhere.txt'] }, { topics: ['imaginary'] }, { added: '2026-02-30' }, { related: [{ id: 'missing', reason: 'No such entry' }] }]) {
     const root = fixture(t);
-    edit(root, 'pocket-inventory', update);
+    edit(root, 'problem-space', update);
     assert.throws(() => loadCatalog(root));
   }
 });
 
 test('rejects symlink directories and public links to unpublished entries', t => {
   const root = fixture(t);
-  edit(root, 'project-eulogy', { publish: false });
+  edit(root, 'problem-space', { publish: false });
   assert.throws(() => loadCatalog(root), /unpublished local link/);
   const second = fixture(t);
-  fs.symlinkSync(os.tmpdir(), path.join(second, 'collection/computing/escape'));
+  fs.symlinkSync(os.tmpdir(), path.join(second, 'collection/making/escape'));
   assert.throws(() => loadCatalog(second), /symlinks/);
 });
 

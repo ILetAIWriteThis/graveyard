@@ -34,4 +34,4 @@ Explicit relationships get automatic backlinks. Shared topics suggest neighbors 
 
 `publish: false` items are validated but excluded from site pages, search, and relationships. They remain visible in Git. Inbox content never publishes automatically.
 
-The six original entries were created during repo design: one based on the owner's stated intent and five caretaker examples. They provide reusable material and exercise the format. Replace or evolve them as the collection grows.
+The six entries created during repo design were removed when the collector's own material arrived. They remain visible in Git history, but active collection entries should represent real intake rather than demonstration records.

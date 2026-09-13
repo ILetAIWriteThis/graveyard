@@ -10,7 +10,7 @@ The [grounds](https://iletaiwritethis.github.io/graveyard/) offer headstones to 
 
 Tell your agent “bury this” and paste a link, code, quote, thought, or project folder. No form to fill in. No category to choose. [AGENTS.md](AGENTS.md) tells the caretaker how to inspect, preserve, explain, categorize, and connect it. You can also leave text in [inbox/](inbox/README.md); it stays off the website until curated.
 
-Each burial has an `item.json`, a `README.md` explaining **WHAT** it attempted and **WHY** it might be useful, and optional source files. Domains are folders; topics and explained relationships connect them. The initial six entries are openly labeled starter material.
+Each burial has an `item.json`, a `README.md` explaining **WHAT** it attempted and **WHY** it might be useful, and optional source files. Domains are folders; topics and explained relationships connect them. The original starter records have left the grounds; current entries come from the collector.
 
 ## Open the gates locally
 
